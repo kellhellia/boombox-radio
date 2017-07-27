@@ -5,7 +5,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      on: false
+      on: false,
+      radioText: 'Hello, friend'
     };
   }
 
@@ -14,8 +15,26 @@ class App extends Component {
     this.setState({on: !on});
   }
 
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({radioText: 'Press the red button'});
+    }, 3000);
+
+    setTimeout(() => {
+      this.setState({radioText: 'And we\'ll go to the music world'});
+    }, 5000);
+
+    setTimeout(() => {
+      this.setState({radioText: 'Let\'s go fun!'});
+    }, 8000);
+
+    setTimeout(() => {
+      this.setState({radioText: '---'});
+    }, 10000);
+  }
+
   render() {
-    const { on } = this.state;
+    const { on, radioText } = this.state;
 
     return (
       <div className="layout">
@@ -30,9 +49,7 @@ class App extends Component {
 
           <div className="radio">
             <div className="radio_deck">
-              <div className="radio_deck-stripe" />
-              <div className="radio_deck-stripe" />
-              <div className="radio_deck-stripe" />
+              {radioText}
             </div>
 
             <div className="radio_switch">

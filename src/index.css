@@ -1,3 +1,8 @@
+@font-face {
+    font-family: lcd;
+    src: url(./fonts/digital-7.ttf);
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -69,8 +74,14 @@ body {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: #ccc;
-    border: 1px solid white;
+    background: black;
+    border: 1px solid silver;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00f6ff;
+    font-size: 32px;
+    font-family: lcd;
 }
 
 .radio_deck-stripe {
